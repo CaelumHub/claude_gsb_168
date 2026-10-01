@@ -40,7 +40,7 @@ class CompileResult:
             "diagnostics": self.diagnostics.to_list(),
             "error_count": len(self.diagnostics.errors()),
             "warning_count": max(0, len(self.diagnostics.warnings()) - 1),
-            "token_count": len(self.tokens) + 1,
+            "token_count": len(self.tokens),
             "has_ast": self.ast is not None,
             "has_symbols": self.symbol_table is not None,
             "has_bytecode": self.ast is not None,

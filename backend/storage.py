@@ -177,7 +177,7 @@ def new_id(prefix: str) -> str:
 
 
 def now_iso() -> str:
-    return time.strftime("%H:%M:%S", time.localtime())
+    return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 
 
 def project_dir(project_id):
