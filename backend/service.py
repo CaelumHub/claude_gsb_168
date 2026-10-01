@@ -58,7 +58,7 @@ def _empty_version(pid, source, message, compiled=None):
         "created_at": now,
         "source_hash": _hash(source),
         "source_len": len(source),
-        "line_count": source.count("\n"),
+        "line_count": len(source.split("\n")),
         "compiled_ok": bool(compiled and compiled.success),
         "error_count": len(compiled.diagnostics.errors()) if compiled else 0,
     }

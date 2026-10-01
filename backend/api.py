@@ -125,7 +125,7 @@ class Handler(BaseHTTPRequestHandler):
 
         m = re.match(r"^/api/projects/([^/]+)/versions$", path)
         if m and method == "GET":
-            return self._json(200, {"ok": True, "versions": svc.list_versions(m.group(1))[::-1]})
+            return self._json(200, {"ok": True, "versions": svc.list_versions(m.group(1))})
         if m and method == "POST":
             ver = svc.save_version(m.group(1), body.get("source", ""), body.get("message", ""))
             return self._json(200, {"ok": True, "version": ver})
